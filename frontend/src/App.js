@@ -50,6 +50,3 @@ function App() {
 }
 
 export default App;
-
-
-//sptify-clone
