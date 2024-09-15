@@ -2,7 +2,7 @@ import React, {useState, useEffect, useContext} from 'react'
 import './Library.css'
 import { Link } from 'react-router-dom'
 
-import PlaylistCard from '../innerComps/PlaylistCard'
+import PlaylistCard from './innerComps/PlaylistCard'
 import { UserContext } from '../App'
 
 function Library() {
