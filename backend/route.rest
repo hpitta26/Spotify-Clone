@@ -1,0 +1,48 @@
+### TEST ROUTES HERE
+
+GET http://localhost:9000/users
+
+### + or %20 --> specify 'space'
+
+GET http://localhost:9000/users?username=Henrique+Pitta
+
+### User doesn't exist
+
+GET http://localhost:9000/users?username=Henry+Smith
+
+###
+
+POST http://localhost:9000/users
+Content-Type: application/json
+
+{
+    "username": "Henrique Pitta",
+    "profilepic": "empty",
+    "followers": [],
+    "following": ["Fred again..", "Katelyn Wang"],
+    "playlists": ["Chill", "Old Skol", "Reggae", "Espanglich", "Late Night", "Fred Fre Fr F... etc."]
+}
+
+###
+
+POST http://localhost:9000/users
+Content-Type: application/json
+
+{
+    "username": "Evelise Pitta",
+    "profilepic": "empty",
+    "followers": [],
+    "following": ["Henrique Pitta"],
+    "playlists": ["Rescue Church"]
+}
+
+
+###
+
+POST http://localhost:9000/users
+Content-Type: application/json
+
+{
+    "username": "Henrique Pitta"
+}
+
