@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-
+      Hello
       {/* Context can be expanded later with more listed tuples */}
       <UserContext.Provider value={{user: user}}> 
         <Navbar/>
