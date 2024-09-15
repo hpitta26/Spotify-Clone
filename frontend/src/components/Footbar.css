@@ -1,0 +1,30 @@
+.fb-whole {
+    position: fixed;
+    bottom: 0;
+    height: 85px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+
+    background-color: rgb(239, 170, 170);
+}
+
+.fb1 {
+    padding: 1rem;
+    grid-column: span 3;
+
+    background-color: rgb(30, 210, 210);
+}
+
+.fb2 {
+    grid-column: span 6;
+
+    background-color: rgb(43, 197, 74);
+}
+
+.fb3 {
+    grid-column: span 3;
+
+    background-color: rgb(194, 70, 29);
+}

@@ -1,0 +1,81 @@
+.mid1 {
+    grid-column: span 4; /* span of mid-container */
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.7rem;
+    overflow: hidden;
+
+    background-color: aqua; 
+     /* position: relative; */
+}
+
+.lib-header {
+    height: 105px;
+    z-index: 5; /* positioned in-front of other elements  */
+
+    background-color: blueviolet;
+    /* position: absolute;
+    width: 100%; */
+}
+
+.lib-scroll {
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+
+    background-color: beige;
+}
+
+.lib-list-header {
+    height: 45px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    align-items: center;
+
+    background-color: azure;
+}
+
+.llh-item-1 {
+    text-align: left;
+    margin-left: 0.7rem;
+    
+    background-color: rgb(45, 160, 147);
+}
+.llh-item-2 {
+    text-align: right;
+    margin-right: 0.7rem;
+
+    background-color: rgb(45, 160, 147);
+}
+
+
+
+.lib-list-item {
+    height: 65px;
+    margin-left: 0.2rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+
+    border-radius: 0.4rem;
+
+    background-color: aqua;
+}
+
+
+
+
+.lib-scroll::-webkit-scrollbar {
+    width: 9px;
+}
+
+.lib-scroll::-webkit-scrollbar-track {
+    background: beige;
+}
+
+.lib-scroll::-webkit-scrollbar-thumb {
+    background: #888; /* Thumb color */
+    border-radius: 0.5rem; /* Rounded corners */
+    width: 5px;
+}
+

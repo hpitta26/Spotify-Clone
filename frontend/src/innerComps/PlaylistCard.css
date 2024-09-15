@@ -1,0 +1,37 @@
+
+.playlistC-whole {
+    height: 65px;
+    margin-left: 0.3rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    border-radius: 0.4rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    background-color: rgb(98, 238, 179);
+}
+
+.plc-image {
+
+    padding: 1rem;
+    /* margin: 0.5rem; */
+    border-radius: 0.4rem;
+
+    background-color: burlywood;
+}
+
+.plc-description {
+    flex: 1;
+    margin-left: 0.5rem;
+    text-align: left;
+
+    background-color: cornflowerblue;
+}
+
+.plc-des-item2 {
+    
+}

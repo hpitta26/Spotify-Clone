@@ -1,0 +1,22 @@
+{
+    "users": [
+        {
+            "id":1,
+            "name": "Henrique Pitta",
+            "followers": [],
+            "following": ["Fred again..", "Katelyn Wang"],
+            "playlists": ["Chill", "Old Skol", "Reggae", "Espanglich", "Late Night", "Fred Fre Fr F... etc."],
+            "songs": [],
+            "likedsongs": []
+        },
+        {
+            "id": 2,
+            "name": "Fred again..",
+            "followers": [],
+            "following": [],
+            "playlists": ["ten days", "USB", "Secret Life"],
+            "songs": ["places to be", "Marea", "adore u", "leavemealone", "Delilah"],
+            "likedsongs": []
+        }
+    ]
+}

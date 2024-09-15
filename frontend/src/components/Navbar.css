@@ -1,0 +1,28 @@
+.nb-whole {
+    height: 63px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* Create 12 equal columns */
+    align-items: center; /* Vertically align in the center */
+    /* gap: 10px; */
+    /* padding: 10px 20px; */
+    background-color: rgb(239, 170, 170);
+}
+
+
+.nb1 {
+    grid-column: span 2;
+
+    background-color: rgb(30, 210, 210);
+}
+
+.nb2 {
+    grid-column: span 8;
+
+    background-color: rgb(43, 197, 74);
+}
+
+.nb3 {
+    grid-column: span 2;
+
+    background-color: rgb(194, 70, 29);
+}
