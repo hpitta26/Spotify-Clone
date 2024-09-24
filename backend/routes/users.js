@@ -1,6 +1,7 @@
 //require in Node.js is their 'import' statement
 const express = require('express')
 const router = express.Router()
+
 const User = require('../models/userModel')
 
 
@@ -8,10 +9,12 @@ const User = require('../models/userModel')
 router.get('/', async (req, res) => {
     if (!req.query.username) { //Get --> All
         try {
-            const allUsers = await User.find() //Returns all 'User's in route '/'
+            //populate --> middleware used to populate object references from _id
+            const allUsers = await User.find().populate('albums') //Returns all 'User's in route '/'
+
             res.status(200).json(allUsers)
         } catch (err) {
-            res.status(500).json({ message: err.message}) //500 -> there was an error in DB
+            res.status(500).json({ message: err.message }) //500 -> there was an error in DB
         }
     } else { //Get --> username
         try {
@@ -22,7 +25,7 @@ router.get('/', async (req, res) => {
             }
             res.status(200).json(tarUser)
         } catch (err) {
-            res.status(500).json({ message: err.message})
+            res.status(500).json({ message: err.message })
         }
     }
 })
@@ -34,21 +37,34 @@ router.get('/:id', async (req, res) => {
 
 //Post --> One
 router.post('/', async (req, res) => {
-    const user = new User({
-        username: req.body.username,
-        profilepic: req.body.profilepic,
-        followers: req.body.followers,
-        following: req.body.following,
-        playlists: req.body.playlists
-    })
-
     try {
+        const user = new User({
+            username: req.body.username,
+            profilepic: req.body.profilepic,
+            followers: req.body.followers,
+            following: req.body.following,
+            playlists: req.body.playlists
+        })
+
         const savedUser = await user.save()
         res.status(201).json(savedUser) //201 -> successfully created an Object
     } catch (err) {
-        res.status(400).json({ message: err.message}) //400 -> something wrong with the input
+        res.status(400).json({ message: err.message }) //400 -> something wrong with the input
     }
 })
+
+//Delete --> All
+router.delete('/', async (req, res) => {
+    try {
+        await User.deleteMany({})
+        res.status(200).json({ message : 'All Users Deleted'})
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+})
+
+
+
 
 
 

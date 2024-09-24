@@ -1,21 +1,25 @@
 const mongoose = require('mongoose')
+const { Schema } = mongoose
 
 const songSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
-    artists: {
-        type: [String],
-        required: true
-    },
+    artists: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true 
+    }],
     length: {
         type: Number,
         required: true,
         validate: [lenValidate, 'Song length must be Positive!']
     },
     album: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: 'Playlist',
         required: true
     },
     publishdate: {

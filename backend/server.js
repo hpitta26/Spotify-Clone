@@ -27,6 +27,14 @@ db.once('open', () => console.log('Connected to Database'))
 const userRouter = require('./routes/users')
 app.use('/users', userRouter)
 
+//localhost:9000/playlists
+const playlistRouter = require('./routes/playlists')
+app.use('/playlists', playlistRouter)
+
+//localhost:9000/songs
+const songRouter = require('./routes/songs')
+app.use('/songs', songRouter)
+
 
 
 

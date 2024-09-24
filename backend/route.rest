@@ -6,6 +6,7 @@ GET http://localhost:9000/users
 
 GET http://localhost:9000/users?username=Henrique+Pitta
 
+
 ### User doesn't exist
 
 GET http://localhost:9000/users?username=Henry+Smith
@@ -19,8 +20,7 @@ Content-Type: application/json
     "username": "Henrique Pitta",
     "profilepic": "empty",
     "followers": [],
-    "following": ["Fred again..", "Katelyn Wang"],
-    "playlists": ["Chill", "Old Skol", "Reggae", "Espanglich", "Late Night", "Fred Fre Fr F... etc."]
+    "following": ["Fred again..", "Katelyn Wang"]
 }
 
 ###
@@ -36,7 +36,6 @@ Content-Type: application/json
     "playlists": ["Rescue Church"]
 }
 
-
 ###
 
 POST http://localhost:9000/users
@@ -46,3 +45,94 @@ Content-Type: application/json
     "username": "Henrique Pitta"
 }
 
+###
+
+DELETE http://localhost:9000/users
+
+###
+
+DELETE http://localhost:9000/playlists
+
+###
+
+DELETE http://localhost:9000/songs
+
+
+
+
+
+
+### Album Reference TEST - DO THIS
+
+GET http://localhost:9000/playlists
+
+###
+
+POST http://localhost:9000/users
+Content-Type: application/json
+
+{
+    "username": "Fred again..",
+    "profilepic": "empty"
+}
+
+###
+
+POST http://localhost:9000/playlists
+Content-Type: application/json
+
+{
+    "title": "ten days",
+    "owner": "Fred again.."
+}
+
+
+
+
+### Song Reference TEST - DO THIS
+
+GET http://localhost:9000/songs
+
+###
+
+POST http://localhost:9000/songs
+Content-Type: application/json
+
+{
+    "title": "adore u",
+    "artist": "Fred again..",
+    "album": "ten days"
+}
+
+###
+
+POST http://localhost:9000/songs
+Content-Type: application/json
+
+{
+    "title": "places to be",
+    "artist": "Fred again..",
+    "album": "ten days"
+}
+
+###
+
+POST http://localhost:9000/songs
+Content-Type: application/json
+
+{
+    "title": "fear less",
+    "artist": "Fred again..",
+    "album": "ten days"
+}
+
+###
+
+POST http://localhost:9000/songs
+Content-Type: application/json
+
+{
+    "title": "where will i be",
+    "artist": "Fred again..",
+    "album": "ten days"
+}
