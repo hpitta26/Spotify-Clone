@@ -35,7 +35,6 @@ router.post('/', async (req, res) => {
 
     res.status(204).json({ message: 'Request Not Implemented Yet...' })
 })
-//aowijdoiajw
 
 //Get --> All
 router.get('/', async (req, res) => {
@@ -51,8 +50,6 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
 
 })
-
-
 
 //Delete --> All
 router.delete('/', async (req, res) => {

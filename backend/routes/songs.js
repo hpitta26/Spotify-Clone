@@ -30,7 +30,6 @@ router.post('/', async (req, res) => {
         })
         
         const savedSong = await newSong.save()
-        // const savedSong = null
         tarAlbum.songs.push(newSong)
         tarUser.songs.push(newSong)
         
@@ -60,8 +59,6 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
 
 })
-
-
 
 //Delete --> All
 router.delete('/', async (req, res) => {
