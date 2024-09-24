@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
             res.status(404).json({ message: `Album: '${req.body.album}' not found` })
         }
 
-        console.log('\n\n\n\n\nOLD USER --> # of albums:', tarUser.albums.length, '\n', tarUser)
+        // console.log('\n\n\n\n\nOLD USER --> # of albums:', tarUser.albums.length, '\n', tarUser)
 
         const newSong = new Song({
             title: req.body.title,
@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
         tarAlbum.songs.push(newSong)
         tarUser.songs.push(newSong)
         
-        console.log('\n\n\n\n\nNEW SONG\n', newSong, '\n\n\n\n\nUPDATED USER\n', tarUser, '\n\n\n\n\nUPDATED ALBUM\n', tarAlbum)
+        // console.log('\n\n\n\n\nNEW SONG\n', newSong, '\n\n\n\n\nUPDATED USER\n', tarUser, '\n\n\n\n\nUPDATED ALBUM\n', tarAlbum)
 
         await tarUser.save()
         await tarAlbum.save()
@@ -64,7 +64,18 @@ router.get('/:id', async (req, res) => {
 router.delete('/', async (req, res) => {
     try {
         await Song.deleteMany({})
-        res.status(200).json({ message : 'All Songs Deleted'})
+        const allUsers = await User.find() //removes ref from Users
+        console.log(allUsers)
+        const allPlaylists = await Playlist.find() //removes ref from Playlists
+        for (const u of allUsers) {
+            u.songs = []
+            await u.save()
+        }
+        for (const pl of allPlaylists) {
+            pl.songs = []
+            await pl.save()
+        }
+        res.status(200).json({ message : 'All Songs & Refs Deleted'})
     } catch (err) {
         res.status(500).json({ message: err.message })
     }

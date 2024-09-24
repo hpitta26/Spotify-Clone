@@ -10,7 +10,7 @@ const songSchema = new mongoose.Schema({
     artists: [{
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true 
+        // required: true 
     }],
     length: {
         type: Number,
@@ -20,7 +20,7 @@ const songSchema = new mongoose.Schema({
     album: {
         type: Schema.Types.ObjectId,
         ref: 'Playlist',
-        required: true
+        // required: true
     },
     publishdate: {
         type: String, //Change this to, type: Date ??

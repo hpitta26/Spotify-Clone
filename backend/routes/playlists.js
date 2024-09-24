@@ -9,7 +9,7 @@ const User = require('../models/userModel')
 
 //Post --> One
 router.post('/', async (req, res) => {
-    //req.query --> will include the username or _id of the (Owner of this playlist)
+    //req.query --> will include the usename or _id of the (Owner of this playlist)
     if (req.body.owner) {
         try {
             const tarUser = await User.findOne({ username: req.body.owner })
@@ -55,6 +55,11 @@ router.get('/:id', async (req, res) => {
 router.delete('/', async (req, res) => {
     try {
         await Playlist.deleteMany({})
+        const allUsers = await User.find()
+        for (const u of allUsers) {
+            u.albums = []
+            await u.save()
+        }
         res.status(200).json({ message : 'All Playlists Deleted'})
     } catch (err) {
         res.status(500).json({ message: err.message })

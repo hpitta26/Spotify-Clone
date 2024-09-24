@@ -20,7 +20,7 @@ Content-Type: application/json
     "username": "Henrique Pitta",
     "profilepic": "empty",
     "followers": [],
-    "following": ["Fred again..", "Katelyn Wang"]
+    "following": []
 }
 
 ###
@@ -72,7 +72,7 @@ POST http://localhost:9000/users
 Content-Type: application/json
 
 {
-    "username": "Fred again..",
+    "username": "Fred Again",
     "profilepic": "empty"
 }
 
@@ -83,8 +83,11 @@ Content-Type: application/json
 
 {
     "title": "ten days",
-    "owner": "Fred again.."
+    "owner": "Fred Again"
 }
+
+
+
 
 
 
@@ -95,36 +98,7 @@ GET http://localhost:9000/songs
 
 ###
 
-POST http://localhost:9000/songs
-Content-Type: application/json
-
-{
-    "title": "adore u",
-    "artist": "Fred again..",
-    "album": "ten days"
-}
-
-###
-
-POST http://localhost:9000/songs
-Content-Type: application/json
-
-{
-    "title": "places to be",
-    "artist": "Fred again..",
-    "album": "ten days"
-}
-
-###
-
-POST http://localhost:9000/songs
-Content-Type: application/json
-
-{
-    "title": "fear less",
-    "artist": "Fred again..",
-    "album": "ten days"
-}
+DELETE http://localhost:9000/songs
 
 ###
 
@@ -133,6 +107,11 @@ Content-Type: application/json
 
 {
     "title": "where will i be",
-    "artist": "Fred again..",
+    "artist": "Fred Again",
     "album": "ten days"
 }
+
+###
+# "title": "adore u",
+# "title": "fear less",
+# "title": "where will i be",

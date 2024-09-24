@@ -3,7 +3,6 @@ const { Schema } = mongoose
 
 //required: false --> for attributes not needed to create user profile
 
-
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
