@@ -14,6 +14,10 @@ const playlistSchema = new mongoose.Schema ({
     owner: {
         type: Schema.Types.ObjectId,
         ref: 'TestU'
+    },
+    playlist: {
+        type: Boolean,
+        default: false
     }
 })
 

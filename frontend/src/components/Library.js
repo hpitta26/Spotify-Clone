@@ -9,7 +9,6 @@ function Library() {
 
     const user = useContext(UserContext).user
 
-    
 
     if (!Object.keys(user).length) { //If user == empty (if useContext() hasn't returned user yet)
         return (
@@ -45,7 +44,7 @@ function Library() {
 
                     {/* Diplay all of the User's playlists */}
                     {user.playlists.map(p =>
-                        <PlaylistCard playlist={p}/>
+                        <PlaylistCard playlist={p} artist={user.username}/>
                     )}
                     
                     <div className='lib-list-item'> 

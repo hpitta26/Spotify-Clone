@@ -72,7 +72,7 @@ POST http://localhost:9000/users
 Content-Type: application/json
 
 {
-    "username": "Fred Again",
+    "username": "Fred Again..",
     "profilepic": "empty"
 }
 
@@ -83,14 +83,19 @@ Content-Type: application/json
 
 {
     "title": "ten days",
-    "owner": "Fred Again"
+    "owner": "Fred Again.."
 }
 
+###
 
+POST http://localhost:9000/playlists
+Content-Type: application/json
 
-
-
-
+{
+    "title": "Late Night",
+    "owner": "Henrique Pitta",
+    "playlist": true
+}
 
 ### Song Reference TEST - DO THIS
 
@@ -107,7 +112,7 @@ Content-Type: application/json
 
 {
     "title": "where will i be",
-    "artist": "Fred Again",
+    "artist": "Fred Again..",
     "album": "ten days"
 }
 

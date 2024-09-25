@@ -65,7 +65,7 @@ router.delete('/', async (req, res) => {
     try {
         await Song.deleteMany({})
         const allUsers = await User.find() //removes ref from Users
-        console.log(allUsers)
+        // console.log(allUsers)
         const allPlaylists = await Playlist.find() //removes ref from Playlists
         for (const u of allUsers) {
             u.songs = []

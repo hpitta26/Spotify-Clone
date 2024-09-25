@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     if (!req.query.username) { //Get --> All
         try {
             //populate --> middleware used to populate object references from _id
-            const allUsers = await User.find().populate('albums') //Returns all 'User's in route '/'
+            const allUsers = await User.find().populate('albums').populate('playlists') //Returns all 'User's in route '/'
             
             res.status(200).json(allUsers)
         } catch (err) {
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
         }
     } else { //Get --> username
         try {
-            const tarUser = await User.findOne({ username: req.query.username }).populate('albums')
+            const tarUser = await User.findOne({ username: req.query.username }).populate('albums').populate('playlists')
             if (!tarUser) {
                 //Must return here or will throw error from 2 responses
                 return res.status(404).json({ message: `User: '${req.query.username}' not found` })
