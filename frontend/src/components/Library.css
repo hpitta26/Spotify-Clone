@@ -1,29 +1,117 @@
 .mid1 {
-    grid-column: span 4; /* span of mid-container */
+    grid-column: span 5; /* span of mid-container */
     display: flex;
     flex-direction: column;
-    border-radius: 0.7rem;
+    border-radius: 0.55rem;
     overflow: hidden;
 
     background-color: aqua; 
      /* position: relative; */
 }
 
+
+
+
+
+
+
 .lib-header {
     height: 105px;
     z-index: 5; /* positioned in-front of other elements  */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
 
-    background-color: blueviolet;
+    padding-left: 1rem;
+    padding-right: 1rem;
     /* position: absolute;
     width: 100%; */
+    background-color: #121212;
 }
+
+.lib-header-item-1 {
+    padding: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+
+    background-color: #121212;
+}
+
+.lhi1-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.7rem;
+    color: #b3b3b3;
+
+    transition: transform 10s ease;
+
+    background-color: #1f1f1f;
+}
+
+.lhi1-left:hover {
+    color: white;
+}
+
+.lhi1-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #121212;
+}
+
+.lhi1-right-inner {
+    display: inline-block;
+    background-color: #1f1f1f;
+}
+
+.lib-header-item-2 {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    padding: 0.1rem;
+    /* background-color: beige; */
+}
+
+.lib-header-item-2 div {
+    border-radius: 1rem;
+    font-size: 0.85em;
+    color: white;
+
+    cursor: pointer;
+
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    transition: transform 5s ease;
+    background-color: rgba(61, 60, 60, 0.9);
+}
+
+.lib-header-item-2 div:hover {
+    background-color: rgba(73, 73, 73, 0.9);
+}
+
+
+
+
+
+
+
+
+
+
 
 .lib-scroll {
     flex: 1;
     width: 100%;
     overflow-y: auto;
 
-    background-color: beige;
+    background-color: #121212;
+    /* background-color: beige; */
 }
 
 .lib-list-header {
@@ -33,23 +121,46 @@
     gap: 10px;
     align-items: center;
 
-    background-color: azure;
+    background-color: #121212;
+    /* background-color: azure; */
 }
 
 .llh-item-1 {
     text-align: left;
     margin-left: 0.7rem;
+    display: flex;
+    align-items: center;
     
-    background-color: rgb(45, 160, 147);
+    background-color: #1f1f1f;
 }
 .llh-item-2 {
     text-align: right;
     margin-right: 0.7rem;
 
-    background-color: rgb(45, 160, 147);
+    background-color: #1f1f1f;
+
 }
 
+.llh-item-2-inner {
+    display: inline-block;
+    color: #b3b3b3;
+    font-size: 0.9em;
 
+    transition: transform 0.1s ease;
+
+    /* background-color: blueviolet; */
+}
+
+.llh-item-2-inner:hover {
+    transform: scale(1.05);
+    color: white;
+}
+
+.llh-item-2-inner-child {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
 
 .lib-list-item {
     height: 65px;
@@ -65,17 +176,23 @@
 
 
 
+
+
+
+
+
 .lib-scroll::-webkit-scrollbar {
     width: 9px;
 }
 
 .lib-scroll::-webkit-scrollbar-track {
-    background: beige;
+    background: #121212;
 }
 
 .lib-scroll::-webkit-scrollbar-thumb {
-    background: #888; /* Thumb color */
-    border-radius: 0.5rem; /* Rounded corners */
+    border-radius: 0.5rem;
     width: 5px;
+
+    background: #888; 
 }
 

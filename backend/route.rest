@@ -92,7 +92,7 @@ POST http://localhost:9000/playlists
 Content-Type: application/json
 
 {
-    "title": "Late Night",
+    "title": "Rapsito",
     "owner": "Henrique Pitta",
     "playlist": true
 }

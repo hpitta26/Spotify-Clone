@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import './Footbar.css'
-import { Link } from 'react-router-dom'
 
 function Footbar() {
   

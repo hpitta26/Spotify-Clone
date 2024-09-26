@@ -7,6 +7,8 @@
 
 }
 
+/* #1ed760  -  Spotify green */
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -50,7 +52,7 @@
 
 
   display: grid;
-  grid-template-columns: repeat(16, 1fr);
+  grid-template-columns: repeat(21, 1fr);
   column-gap: 0.5rem;
 
 
@@ -65,28 +67,16 @@
   background-color: #5367c1;
 }
 
-.mid1 {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  grid-column: span 4;
-  border-radius: 0.7rem;
-
-  box-sizing: border-box;
-
-  background-color: aquamarine;
-}
-
 .mid2 {
-  grid-column: span 9;
-  border-radius: 0.7rem;
+  grid-column: span 12;
+  border-radius: 0.55rem;
 
   background-color: rgb(169, 216, 39);
 }
 
 .mid3 {
-  grid-column: span 3;
-  border-radius: 0.7rem;
+  grid-column: span 4;
+  border-radius: 0.55rem;
 
   background-color: rgb(207, 172, 57);
 }

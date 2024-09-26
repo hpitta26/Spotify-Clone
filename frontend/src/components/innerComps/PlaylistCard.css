@@ -1,9 +1,9 @@
 
 .playlistC-whole {
     height: 65px;
-    margin-left: 0.3rem;
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem;
+    margin-left: 0.5rem;
+    /* margin-top: 0.2rem;
+    margin-bottom: 0.2rem; */
     border-radius: 0.4rem;
 
     display: flex;
@@ -13,11 +13,13 @@
     box-sizing: border-box;
     cursor: pointer;
 
-    background-color: rgb(98, 238, 179);
+    background-color: #121212;
+    /* background-color: rgb(98, 238, 179); */
 }
 
 .playlistC-whole:hover {
-    background-color: rgb(53, 158, 84);
+    background-color: #1f1f1f;
+    /* background-color: rgb(53, 158, 84); */
 }
 
 .plc-frame {
@@ -31,7 +33,7 @@
     justify-content: center;
     overflow: hidden;
 
-    background-color: burlywood;
+    background-color: rgb(181, 177, 183);
 }
 
 .plc-frame img {
@@ -45,10 +47,10 @@
     text-align: left;
 
     background-color: inherit;
-    /* background-color: cornflowerblue; */
 }
 
 .plc-title {
+    color: white;
     font-weight: 500;
     margin-bottom: 0.2rem;
 }
@@ -58,10 +60,9 @@
 }
 
 .plc-des-item2-body {
-    /* transition: color 0.3s ease; */
     font-size: 0.9rem;
     font-weight: 450;
-    color: grey;
+    color: #b3b3b3;
 }
 
 span {

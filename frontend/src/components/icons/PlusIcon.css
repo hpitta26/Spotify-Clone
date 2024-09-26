@@ -1,0 +1,14 @@
+
+.plus-icon {
+    vertical-align: middle;
+
+    border-radius: 50%;
+    width: 22px;
+    padding: 0.3rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;    
+}
+
+.plus-icon:hover {
+    background-color: rgba(61, 60, 60, 0.9);
+}

@@ -1,0 +1,15 @@
+
+.arrow-icon {
+    vertical-align: middle;
+
+    margin-left: 0.5rem;
+    border-radius: 50%;
+    width: 22px;
+    padding: 0.3rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.arrow-icon:hover {
+    background-color: rgba(61, 60, 60, 0.9);
+}

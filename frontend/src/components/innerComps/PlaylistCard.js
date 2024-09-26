@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import './PlaylistCard.css'
-import { Link } from 'react-router-dom'
 
 function PlaylistCard(props) {
     const plImage = '/logo192.png' //React expects images to be in public directory
@@ -10,7 +9,7 @@ function PlaylistCard(props) {
       <div className='playlistC-whole'>
             <div className='plc-frame'>
               {/* image */}
-              <img src={plImage}></img>
+              <img src={plImage} alt='pic'></img>
             </div>
             <div className='plc-description'>
               <div className='plc-title'>{props.playlist.title}</div>
