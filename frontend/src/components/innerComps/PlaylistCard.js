@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './PlaylistCard.css'
 
+
 function PlaylistCard(props) {
     const plImage = '/logo192.png' //React expects images to be in public directory
     

@@ -4,9 +4,19 @@
     width: 22px;
     padding: 0.3rem;
     cursor: pointer;
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
     transition: transform 0.3s ease;
 }
 
 .search-icon:hover {
-    background-color: rgba(61, 60, 60, 0.9);
+    background-color: rgba(61, 60, 60, 0.5);
+}
+
+
+.search-icon-nonactive {
+    pointer-events: none;
 }

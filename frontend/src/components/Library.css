@@ -5,6 +5,8 @@
     border-radius: 0.55rem;
     overflow: hidden;
 
+    user-select: none; /* Prevent all children text from being highlighted */
+
     background-color: aqua; 
      /* position: relative; */
 }
@@ -48,7 +50,7 @@
 
     transition: transform 10s ease;
 
-    background-color: #1f1f1f;
+    /* background-color: #1f1f1f; */
 }
 
 .lhi1-left:hover {
@@ -64,7 +66,7 @@
 
 .lhi1-right-inner {
     display: inline-block;
-    background-color: #1f1f1f;
+    /* background-color: #1f1f1f; */
 }
 
 .lib-header-item-2 {
@@ -88,11 +90,11 @@
     padding-bottom: 0.5rem;
 
     transition: transform 5s ease;
-    background-color: rgba(61, 60, 60, 0.9);
+    background-color: rgba(61, 60, 60, 0.5);
 }
 
 .lib-header-item-2 div:hover {
-    background-color: rgba(73, 73, 73, 0.9);
+    background-color: rgba(73, 73, 73, 0.6);
 }
 
 
@@ -131,13 +133,14 @@
     display: flex;
     align-items: center;
     
-    background-color: #1f1f1f;
+    /* background-color: #1f1f1f; */
+    background-color: #121212;
 }
 .llh-item-2 {
     text-align: right;
     margin-right: 0.7rem;
 
-    background-color: #1f1f1f;
+    /* background-color: #1f1f1f; */
 
 }
 

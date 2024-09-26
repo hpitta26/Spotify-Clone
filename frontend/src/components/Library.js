@@ -1,18 +1,30 @@
 import React, {useState, useEffect, useContext} from 'react'
-import SearchIcon from './icons/SearchIcon'
-
 import './Library.css'
 
-import PlaylistCard from './innerComps/PlaylistCard'
-import { UserContext } from '../App'
+import SearchIcon from './icons/SearchIcon'
 import MenuDotIcon from './icons/MenuDotIcon'
 import LibraryIcon from './icons/LibraryIcon'
 import PlusIcon from './icons/PlusIcon'
 import ArrowIcon from './icons/ArrowIcon'
 
+import PlaylistCard from './innerComps/PlaylistCard'
+import LibSearchBar from './innerComps/LibSearchBar'
+import { UserContext } from '../App'
+
 
 function Library() {
     const user = useContext(UserContext).user
+
+    const [searchValue, setSearchValue] = useState('')
+
+    const [filtPlaylists, setFiltPlaylists] = useState([])
+    const searchChange = (data) => {
+        //Match 'search value' to Playlist Titles with (lowercase & no whitespaces)
+        const fpl = user.playlists.filter((pl) => pl.title.toLowerCase().replace(/\s/g, "").includes(data.toLowerCase().replace(/\s/g, "")))
+        setFiltPlaylists(fpl)
+        setSearchValue(data)
+    }
+
 
     const [libColor, setLibColor] = useState('#b3b3b3')
     const handleLibEnter = () => {
@@ -81,7 +93,7 @@ function Library() {
 
                     <div className='lib-list-header'>
                         <div className='llh-item-1'>
-                            <SearchIcon/>
+                            <LibSearchBar sendToParent={searchChange}/>
                         </div>
                         <div className='llh-item-2'>
                             <div className='llh-item-2-inner' onMouseEnter={handleHbEnter} onMouseLeave={handleHbLeave}>
@@ -94,21 +106,17 @@ function Library() {
                     </div>
 
                     {/* Diplay all of the User's playlists */}
-                    {user.playlists.map(p =>
-                        <PlaylistCard playlist={p} artist={user.username}/>
-                    )}
+                    { (searchValue == '') ? 
+                        (user.playlists.map(p =>
+                            <PlaylistCard playlist={p} artist={user.username}/>
+                        ) 
+                    ) : (filtPlaylists.map(p => //Here Spotify uses --> lowerCase & noSpace to match (and character frequency>2 if not 1st letter of the Title)
+                            <PlaylistCard playlist={p} artist={user.username}/>
+                        ) 
+                    ) }
                     
                     <div className='lib-list-item'> 
-                        hi2
-                    </div>
-                    <div className='lib-list-item'> 
-                        hi3
-                    </div>
-                    <div className='lib-list-item'> 
-                        hi4
-                    </div>
-                    <div className='lib-list-item'> 
-                        hi5
+                        {searchValue}
                     </div>
 
                   </div>

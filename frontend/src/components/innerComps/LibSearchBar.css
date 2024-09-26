@@ -1,0 +1,31 @@
+
+.search-bar-container {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.search-bar-subcontainer {
+    display: inline-block;
+    position: relative;
+
+}
+
+.search-bar-sb {
+    padding-left: 2rem;
+    padding-right: 0.8rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: #b3b3b3;
+    font-weight: 500;
+
+    border: none;
+    border-radius: 0.25rem;
+    outline: none;
+
+    background-color: rgba(61, 60, 60, 0.5);
+}
+
+.search-bar-sb::placeholder {
+    color: #b3b3b3;
+}
