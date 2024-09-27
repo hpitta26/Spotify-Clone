@@ -15,9 +15,9 @@ import { UserContext } from '../App'
 function Library() {
     const user = useContext(UserContext).user
 
-    const [searchValue, setSearchValue] = useState('')
+    const [searchValue, setSearchValue] = useState('') //Keeps track of what is written in the Library SearchBar
 
-    const [filtPlaylists, setFiltPlaylists] = useState([])
+    const [filtPlaylists, setFiltPlaylists] = useState([]) //Keeps track of filtered Playlists --> rendered when user searches
     const searchChange = (data) => {
         //Match 'search value' to Playlist Titles with (lowercase & no whitespaces)
         const fpl = user.playlists.filter((pl) => pl.title.toLowerCase().replace(/\s/g, "").includes(data.toLowerCase().replace(/\s/g, "")))
@@ -26,7 +26,7 @@ function Library() {
     }
 
 
-    const [libColor, setLibColor] = useState('#b3b3b3')
+    const [libColor, setLibColor] = useState('#b3b3b3') //Highlights 'Your Library' when hovered over
     const handleLibEnter = () => {
         setLibColor('white')
     }
@@ -34,7 +34,7 @@ function Library() {
         setLibColor('#b3b3b3')
     }
 
-    const [hbColor, setHbColor] = useState('#b3b3b3')
+    const [hbColor, setHbColor] = useState('#b3b3b3') //Highlights 'Recents' when hovered over
     const handleHbEnter = () => {
         setHbColor('white')
     }
@@ -45,27 +45,6 @@ function Library() {
 
 
     if (!Object.keys(user).length) { //If user == empty (if useContext() hasn't returned user yet)
-        return (
-            <div className='mid1'>
-                <div className='lib-header'>Library Header</div>
-                <div className='lib-scroll'>
-                    <div className='lib-list-header'>
-                        <div className='llh-item-1'>
-                            <SearchIcon/>
-                        </div>
-                        <div className='llh-item-2'>
-                        <div className='llh-item-2-inner' onMouseEnter={handleHbEnter} onMouseLeave={handleHbLeave}>
-                                <div className='llh-item-2-inner-child'>
-                                    Recents
-                                    <MenuDotIcon color={hbColor} />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        )
-    } else {
         return (
             <div className='mid1'>
                 <div className='lib-header'>
@@ -86,7 +65,49 @@ function Library() {
                         <div>Artists</div>
                         <div>Podcasts & Shows</div>
                     </div>
-                    
+                </div>
+                <div className='lib-scroll'>
+                    <div className='lib-list-header'>
+                        <div className='llh-item-1'>
+                            <SearchIcon/> {/* Don't use <LibraryIcon/> here since it could trigger searchChange(), which accesses users which could be null --> crash */}
+                        </div>
+                        <div className='llh-item-2'>
+                        <div className='llh-item-2-inner' onMouseEnter={handleHbEnter} onMouseLeave={handleHbLeave}>
+                                <div className='llh-item-2-inner-child'>
+                                    Recents
+                                    <MenuDotIcon color={hbColor} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        )
+    } else { //This is returned if user is populated
+        return (
+            <div className='mid1'>
+
+                <div className='lib-header'>
+
+                    <div className='lib-header-item-1'>
+                        <div className='lhi1-left' onMouseEnter={handleLibEnter} onMouseLeave={handleLibLeave}>
+                            <LibraryIcon color={libColor} />
+                            <b>Your Library</b>
+                        </div>
+                        <div className='lhi1-right'> 
+                            <div className='lhi1-right-inner'>
+                                <PlusIcon/>
+                                <ArrowIcon/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='lib-header-item-2'>
+                        <div>Playlists</div>
+                        <div>Artists</div>
+                        <div>Podcasts & Shows</div>
+                    </div>
+
                 </div>
 
                 <div className='lib-scroll'>
@@ -115,11 +136,11 @@ function Library() {
                         ) 
                     ) }
                     
-                    <div className='lib-list-item'> 
+                    <div className='lib-list-item'> {/* Delete --> only used to test SearchBar value */}
                         {searchValue}
                     </div>
 
-                  </div>
+                </div>
             </div>    
         )
     }

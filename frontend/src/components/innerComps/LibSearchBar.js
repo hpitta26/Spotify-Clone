@@ -16,6 +16,9 @@ function LibSearchBar(props) {
         setSearch(!search)
     }
     const handleClickOutside = (e) => { //Handles outside clicks
+        if (!search) { //If SearchBar !open --> return
+            return
+        }
         if (inputRef.current && !inputRef.current.contains(e.target)) {
             setSearch(false)
             setCurrInput('')
